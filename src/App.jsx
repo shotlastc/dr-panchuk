@@ -38,7 +38,7 @@ const theme = extendTheme({
 export default function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Router>
+      <Router basename="/dr-panchuk">
         <Routes>
           <Route path="*" element={<Navigate to="/" replace/>} />
           <Route path="/" element={<MainPage />}></Route>
