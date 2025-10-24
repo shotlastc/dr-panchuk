@@ -14,7 +14,7 @@ export default function VideoBackground() {
       h="100%"
       position="fixed"
       zIndex="-1"
-      src="/src/assets/background.mp4"
+      src="background.mp4"
     >
       <source  type="video/mp4" />
       Your browser does not support the video tag.
