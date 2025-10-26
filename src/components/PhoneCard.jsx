@@ -22,7 +22,7 @@ export default function PhoneCard(attr){
             <VStack gap={{base:5}}>
                 <HStack gap={{base:5}}>
                     <Link
-                        href="viber://chat?number=%2B380671234567"
+                        href="viber://chat?number=%2B380674945800"
                         display="flex"
                         alignItems="center"
                         gap={2}
@@ -47,7 +47,7 @@ export default function PhoneCard(attr){
                 </HStack>
 
                 <Link
-                    href="tel:+380671234567"
+                    href="tel:+380674945800"
                     display="flex"
                     alignItems="center"
                     gap={2}
@@ -55,7 +55,7 @@ export default function PhoneCard(attr){
                     _hover={{ color: "teal.200" }}
                 >
                     <Icon as={FaPhoneAlt} boxSize={5} />
-                    <Text fontSize={{base:'md', md:'xl'}}>+38 (067) 123-45-67</Text>
+                    <Text fontSize={{base:'md', md:'xl'}}>+38 (067) 494-58-00</Text>
                 </Link>
             </VStack>
         </Card>
