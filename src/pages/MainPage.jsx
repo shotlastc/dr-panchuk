@@ -1,5 +1,4 @@
-
-import { Box, Grid, GridItem} from "@chakra-ui/react";
+import { Box, Grid, GridItem } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
@@ -8,18 +7,18 @@ import DoctorCard from "../components/DoctorCard";
 import ServicesCard from "../components/ServicesCard";
 import Header from "../components/Header";
 import MapCard from "../components/MapCard";
-import PhoneCard from "../components/PhoneCard"
+import PhoneCard from "../components/PhoneCard";
 import ReviewsCard from "../components/ReviewsCard";
 import AddressCard from "../components/AddressCard";
 
-import '../styles.css'
+import "../styles.css";
 import Footer from "../components/Footer";
+import CertificatesCard from "../components/CertificatesCard";
 
 const MotionBox = motion.create(Box);
 const MotionGridItem = motion.create(GridItem);
 
 export default function MainPage() {
-
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -34,7 +33,7 @@ export default function MainPage() {
     },
   };
 
-    const itemVariants = {
+  const itemVariants = {
     hidden: { opacity: 0, y: 40, scale: 0.98 },
     visible: {
       opacity: 1,
@@ -46,7 +45,7 @@ export default function MainPage() {
 
   return (
     <Box position="relative" h="100vh" overflowX="hidden">
-      <VideoBackground/>
+      <VideoBackground />
       <MotionBox
         ref={ref}
         variants={containerVariants}
@@ -61,43 +60,49 @@ export default function MainPage() {
         color="white"
       >
         <Box>
-          <Header/> 
-        </Box> 
-        
-        <Grid 
+          <Header />
+        </Box>
+
+        <Grid
           mt={{ base: "60px", md: "100px" }}
           gap={{ base: 6, md: 10 }}
-          p={{ base: 5}}
+          p={{ base: 5 }}
           maxW="1080px"
           templateColumns={{
             base: "1fr", // mobile — one column
             md: "repeat(2, 1fr)", // tablet — two columns
           }}
-        > 
-          <MotionGridItem variants={itemVariants} >
-            <DoctorCard p={2} maxW='500px' h={{md:'300px'}}/>
+        >
+          <MotionGridItem variants={itemVariants}>
+            <DoctorCard p={2} maxW="500px" h={{ md: "300px" }} />
           </MotionGridItem>
-          <MotionGridItem rowSpan={3} variants={itemVariants} >
-            <ServicesCard maxW='500px' h={{md: '700px'}} w={{base:'95vw', md: '500px'}}/>
-          </MotionGridItem >
-          <MotionGridItem maxW='500px' variants={itemVariants}>
+          <MotionGridItem rowSpan={3} variants={itemVariants}>
+            <ServicesCard
+              maxW="500px"
+              h={{ md: "700px" }}
+              w={{ base: "95vw", md: "500px" }}
+            />
+          </MotionGridItem>
+          <MotionGridItem maxW="500px" variants={itemVariants}>
             <PhoneCard />
           </MotionGridItem>
           <MotionGridItem variants={itemVariants}>
-            <AddressCard maxW='500px' />
+            <AddressCard maxW="500px" />
           </MotionGridItem>
-          <MotionGridItem colSpan={{ base: 1, md: 2}} variants={itemVariants} >
-            <MapCard h={{ base: "300px", md: "400px" }}/>
+          <MotionGridItem colSpan={{ base: 1, md: 2 }} variants={itemVariants}>
+            <MapCard h={{ base: "300px", md: "400px" }} />
           </MotionGridItem>
-          <MotionGridItem colSpan={{ base: 1, md: 2}} variants={itemVariants}>
-            <ReviewsCard  w={{base:'95vw', md: '100%'}}/>
+          <MotionGridItem colSpan={{ base: 1, md: 2 }} variants={itemVariants}>
+            <ReviewsCard w={{ base: "95vw", md: "100%" }} />
           </MotionGridItem>
-          <MotionGridItem colSpan={{ base: 1, md: 2}} variants={itemVariants}>
-            <Footer/>
+          <MotionGridItem colSpan={{ base: 1, md: 2 }} variants={itemVariants}>
+            <CertificatesCard w={{ base: "95vw", md: "100%" }} />
+          </MotionGridItem>
+          <MotionGridItem colSpan={{ base: 1, md: 2 }} variants={itemVariants}>
+            <Footer />
           </MotionGridItem>
         </Grid>
       </MotionBox>
     </Box>
-
   );
 }

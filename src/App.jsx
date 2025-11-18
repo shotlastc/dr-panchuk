@@ -1,9 +1,13 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import "@fontsource/manrope";
 import "@fontsource/nunito-sans";
-import MainPage from './pages/MainPage';
-
+import MainPage from "./pages/MainPage";
 
 const theme = extendTheme({
   styles: {
@@ -38,13 +42,12 @@ const theme = extendTheme({
 export default function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Router basename="/dr-panchuk">
+      <Router>
         <Routes>
-          <Route path="*" element={<Navigate to="/" replace/>} />
+          <Route path="*" element={<Navigate to="/" replace />} />
           <Route path="/" element={<MainPage />}></Route>
         </Routes>
       </Router>
     </ChakraProvider>
-
   );
 }
